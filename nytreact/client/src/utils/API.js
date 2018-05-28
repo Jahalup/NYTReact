@@ -6,5 +6,12 @@ export default {
     },
     queryNYT: function(url) {
         return axios.get(url);
+    },
+    saveArticle: function(savedarticle) {
+        return axios.post("/api/articles", savedarticle);
     }
+    
+    
+
+
 }

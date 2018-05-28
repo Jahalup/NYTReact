@@ -6,9 +6,10 @@ import API from "../../utils/API";
 // import { Col, Row, Container } from "../../components/Grid";
 // import { List, ListItem } from "../../components/List";
 import { Input, FormBtn } from "../../components/Form";
-import { Card } from "../../components/Card";
+import { Card, Cardart } from "../../components/Card";
 import { Article } from "../../components/EachArt";
 import { Container} from "../../components/Grid";
+import { Nav } from "../../components/Navbar";
 
 class Articles extends Component {
     state = {
@@ -19,6 +20,27 @@ class Articles extends Component {
         previousSearch: {},
         noResults: false
     }
+
+saveArticle = (result) => {
+    console.log(result);
+    let savedarticle = {
+        date: result.pub_date,
+        title: result.headline.main,
+        url: result.web_url,
+        summary: result.snippet
+    }
+    console.log("savedarticle: " + savedarticle);
+
+
+API.saveArticle(savedarticle).then(results => {
+    console.log(results);
+    // let newsavedlist = this.state.results.filter(result => result.headline.main !== savedarticle.title)
+    // this.setState({results: newsavedlist })
+})
+.catch(err => console.log(err));    
+}
+
+
 
 
 handleInputChange = event => {
@@ -94,29 +116,32 @@ let endyear = this.state.endyear;
 render() {
     return (
        <Container fluid>
-        <Card>
-        <form>
+       <Nav />
+        <Card head="Search for a new Article">
+        <form style={{marginLeft: 26 + 'em'}}>
+        
             <Input
             value={this.state.topic}
             onChange={this.handleInputChange}
             name="topic" 
-            placeholder="Topic"
+            place="Topic"
+
             />
             <Input 
             value={this.state.startyear}
             onChange={this.handleInputChange}
             name="startyear" 
-            placeholder="Start Year" />
+            place="Start Year" />
             <Input 
             value={this.state.endyear}
             onChange={this.handleInputChange}
             name="endyear" 
-            placeholder="End Year" />
+            place="End Year" />
             <FormBtn 
             onClick={this.handleFormSubmit}/>
                 </form>
         </Card>
-        <Card>
+        <Cardart>
            
                 
         {this.state.results.map((result, i) => (
@@ -126,12 +151,12 @@ render() {
                 url={result.web_url}
                 summary={result.snippet}
                 date={result.pub_date}
-                type='Save'
+                onClick={() => this.saveArticle(result)}
                 />
             ))}
         
        
-        </Card>
+        </Cardart>
         </Container>
             )}
             
