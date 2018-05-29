@@ -34,8 +34,8 @@ saveArticle = (result) => {
 
 API.saveArticle(savedarticle).then(results => {
     console.log(results);
-    // let newsavedlist = this.state.results.filter(result => result.headline.main !== savedarticle.title)
-    // this.setState({results: newsavedlist })
+    let newsavedlist = this.state.results.filter(result => result.headline.main !== savedarticle.title)
+    this.setState({results: newsavedlist })
 })
 .catch(err => console.log(err));    
 }
@@ -158,7 +158,8 @@ render() {
        
         </Cardart>
         </Container>
-            )}
+            );
+        }
             
         }
         

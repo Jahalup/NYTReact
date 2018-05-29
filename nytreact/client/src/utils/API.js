@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 
 export default {
     getArticles: function() {
@@ -11,7 +11,4 @@ export default {
         return axios.post("/api/articles", savedarticle);
     }
     
-    
-
-
-}
+};
