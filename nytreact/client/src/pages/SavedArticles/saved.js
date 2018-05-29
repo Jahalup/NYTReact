@@ -24,6 +24,15 @@ class SavedArticles extends Component {
     })
 };
 
+deleteArticle = (id) => {
+    console.log(id);
+   
+   API.deleteArticle(id).then(results => {
+    this.setState({ SavedArticles: []});
+    this.loadArticles();
+   })
+   .catch(err => console.log(err));    
+}
 
 
 
@@ -39,7 +48,7 @@ render() {
                 url={result.url}
                 summary={result.summary}
                 date={result.date}
-                onClick={() => this.saveArticle(result)
+                onClick={() => this.deleteArticle(result._id)
                 }
                 />
             ))}

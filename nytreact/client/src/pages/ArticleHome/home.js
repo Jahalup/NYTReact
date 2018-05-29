@@ -118,7 +118,7 @@ render() {
        <Container fluid>
        <Nav />
         <Card head="Search for a new Article">
-        <form style={{marginLeft: 26 + 'em'}}>
+        <form style={{marginLeft: 35 + "%" }}>
         
             <Input
             value={this.state.topic}
@@ -131,12 +131,12 @@ render() {
             value={this.state.startyear}
             onChange={this.handleInputChange}
             name="startyear" 
-            place="Start Year" />
+            place="Start Year (YYYYMMDD)" />
             <Input 
             value={this.state.endyear}
             onChange={this.handleInputChange}
             name="endyear" 
-            place="End Year" />
+            place="End Year (YYYYMMDD)" />
             <FormBtn 
             onClick={this.handleFormSubmit}/>
                 </form>
