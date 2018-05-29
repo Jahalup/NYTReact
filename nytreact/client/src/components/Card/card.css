@@ -15,11 +15,12 @@
 }
 
 .news {
-    background-image: url("newsprint.jpg")
+    background-image: url("newsprint.jpg");
+    background-attachment: fixed;
 }
 
 .inputarea {
-    background-color: rgba(245, 245, 220, 0.589);
+    background-color: rgba(238, 238, 231, 0.582);
     border-radius: 8px;
     margin: 25px;
 }

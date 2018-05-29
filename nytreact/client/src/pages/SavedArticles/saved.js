@@ -1,3 +1,4 @@
+// Imports
 import React, { Component } from "react";
 import API from "../../utils/API";
 import { SavedArticle } from "../../components/EachArt";
@@ -7,14 +8,17 @@ import { CardSaved } from "../../components/Card";
 
 class SavedArticles extends Component {
 
+    // Setting state for saved article array
     state={
         SavedArticles: []
     };
 
+    // Loading current saved articles
     componentWillMount() {
         this.loadArticles();
     }
 
+    // Call to db to retrieve saved articles
     loadArticles = () => {
          
         API.getArticles().then(results => {this.setState({SavedArticles: results.data
@@ -24,6 +28,7 @@ class SavedArticles extends Component {
     })
 };
 
+// Function to handle deletion of a saved article from the db. Called onclick of the delete button.
 deleteArticle = (id) => {
     console.log(id);
    
@@ -35,7 +40,7 @@ deleteArticle = (id) => {
 }
 
 
-
+// Rendering the saved page
 render() {
     return (
         <Container fluid>
@@ -53,14 +58,11 @@ render() {
                 />
             ))}
 
-
             </CardSaved>
 
-
-
         </Container>
-    )
-}
+        )
+    }
 }
 
 export default SavedArticles;
