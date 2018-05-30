@@ -6,13 +6,13 @@ This project was created by Jaime Halupka as a requirement for homework during U
 ### Screenshots
 
 Main Screen
-![In Action](public/screenshots/screenshot1.png "In Action")
+![In Action](client/public/screenshots/screenshot1.png "In Action")
 
 Searched Articles
-![In Action](public/screenshots/screenshot2.png "In Action")
+![In Action](client/public/screenshots/screenshot2.png "In Action")
 
 Saved Articles
-![In Action](public/screenshots/screenshot3.png "In Action")
+![In Action](client/public/screenshots/screenshot3.png "In Action")
 
 
   
