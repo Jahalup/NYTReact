@@ -23,7 +23,7 @@ This application allows the user to search for New York Times articles according
 
 ### Link to Application
 
-[Heroku Link]()
+[Heroku Link](https://enigmatic-refuge-53446.herokuapp.com/)
 
 ### GIFs
 
